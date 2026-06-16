@@ -20,6 +20,12 @@ def apply_custom_styles():
             color: #94a3b8;
         }
         
+        /* Disable typing search in Streamlit Selectboxes */
+        div[data-baseweb="select"] input {
+            caret-color: transparent !important;
+            pointer-events: none !important;
+        }
+        
         /* Headers */
         h1, h2, h3, h4, h5, h6 {
             color: #38bdf8 !important;

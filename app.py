@@ -49,7 +49,7 @@ st.sidebar.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-page = st.sidebar.radio(
+page = st.sidebar.selectbox(
     "📂 Navigation Panel",
     [
         "1. Home",
