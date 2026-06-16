@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.graph_objects as go
 from streamlit_folium import folium_static
 from dashboard.styles import render_header, render_metric_card, render_alert_card
 from maps.map_renderer import render_rainfall_heatmap, render_temperature_heatmap, render_anomaly_map
@@ -102,10 +103,15 @@ def show_digital_twin(engine):
         if st.button("🔮 Run 7-Day Recursive Forecast"):
             with st.spinner("Generating prediction timeline..."):
                 try:
-                    df_fc = engine.get_forecast_state(date_str, n_days=7)
-                    df_fc_state = df_fc[df_fc['state'] == forecast_state]
+                    from models.prediction_engine import forecast_recursive
+                    df_fc_state = forecast_recursive(forecast_state, date_str, n_days=7, model_type='xgb')
                     
                     if not df_fc_state.empty:
+                        # Merge normals for anomalies calculations
+                        df_fc_state = pd.merge(df_fc_state, engine.historical_normals, on=['state', 'month'], how='left')
+                        df_fc_state['max_temp_anomaly'] = df_fc_state['max_temp'] - df_fc_state['normal_max_temp']
+                        df_fc_state['min_temp_anomaly'] = df_fc_state['min_temp'] - df_fc_state['normal_min_temp']
+                        df_fc_state['rainfall_anomaly'] = df_fc_state['rainfall'] - df_fc_state['normal_rainfall']
                         # Draw temperature forecast curve
                         fig_fc = go.Figure()
                         fig_fc.add_trace(go.Scatter(
