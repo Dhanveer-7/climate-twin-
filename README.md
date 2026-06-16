@@ -12,7 +12,7 @@ This digital twin provides a high-fidelity virtual representation of India's cli
 2. **Climate Prediction Engine**: Employs pre-trained Random Forest and XGBoost Regressors to compute future recursive multi-step temperatures and rainfalls for 7-day and 30-day forecasting horizons.
 3. **Interactive Operations Room**: Visualizes daily meteorological states and z-score departures on customized Folium heatmaps and interactive bubble maps.
 4. **Active Climate Intelligence**: Generates automated warning alert banners (Red/Orange/Yellow cards) for extreme heating, cloudbursts, and crop drought conditions.
-5. **What-If Scenario Simulator**: Stress-tests national vulnerability by applying temperature offsets ($\Delta T \in \{+1^\circ\text{C}, +2^\circ\text{C}, +3^\circ\text{C}\}$) and monsoon fluctuations ($\Delta R \in \{-20\%, -10\%, +10\%, +20\%\}$) to evaluate crop yield deltas, reservoir depletion rates, and public health thermal indicators.
+5. **What-If Scenario Simulator**: Stress-tests national vulnerability by applying temperature offsets (ΔT ∈ {+1°C, +2°C, +3°C}) and monsoon fluctuations (ΔR ∈ {-20%, -10%, +10%, +20%}) to evaluate crop yield deltas, reservoir depletion rates, and public health thermal indicators.
 
 ---
 
