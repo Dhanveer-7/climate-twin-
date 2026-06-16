@@ -259,6 +259,13 @@ def get_preprocessed_data():
     final_df = engineer_features(cleaned_df)
     return final_df
 
+# Enable Streamlit caching dynamically if running inside a Streamlit app to speed up queries
+try:
+    import streamlit as st
+    get_preprocessed_data = st.cache_data(get_preprocessed_data)
+except Exception:
+    pass
+
 if __name__ == "__main__":
     initialize_database()
     # Test feature engineering
