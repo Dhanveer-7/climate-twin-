@@ -86,7 +86,7 @@ def show_scenario_simulator(engine):
                     'steps': [
                         {'range': [-50, -20], 'color': "rgba(239, 68, 68, 0.2)"},
                         {'range': [-20, 0], 'color': "rgba(245, 158, 11, 0.2)"},
-                        {'range': 0, 'color': "rgba(16, 185, 129, 0.2)"}
+                        {'range': [0, 10], 'color': "rgba(16, 185, 129, 0.2)"}
                     ]
                 }
             ))
