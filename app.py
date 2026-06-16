@@ -63,19 +63,7 @@ page = st.sidebar.selectbox(
     key="nav_panel"
 )
 
-# Team members panel in sidebar
-st.sidebar.markdown("""
-    <hr style="border: 0; border-top: 1px solid #1f355c; margin-top: 20px; margin-bottom: 20px;">
-    <div style="padding: 12px; background-color: #0c1830; border: 1px solid #1e3a6c; border-radius: 8px;">
-        <h5 style="color: #38bdf8 !important; margin-top: 0; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">👥 Team DhruvaX</h5>
-        <ul style="color: #cbd5e1; font-size: 0.8rem; padding-left: 15px; margin: 0; line-height: 1.5;">
-            <li><b>Dhanveer M</b></li>
-            <li>Jovin Joshua</li>
-            <li>Elamaran B</li>
-            <li>Athish K.B</li>
-        </ul>
-    </div>
-""", unsafe_allow_html=True)
+
 
 # Route Navigation Selection
 if page == "1. Home":
